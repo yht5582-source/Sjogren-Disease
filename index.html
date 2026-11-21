@@ -38,7 +38,21 @@
 #careFlow .field input,#careFlow .field select{font-size:16px}
 @media(max-width:650px){#flowSteps{grid-template-columns:repeat(2,minmax(0,1fr))}.flowHead{padding:14px}.flowFoot{bottom:0}}
 @media print{#flowSteps,.flowFoot{display:none!important}.flowPane{display:block!important}}
-</style></head><body><header><h1>Sjögren Clinical Navigator <span style="display:inline-block;font-size:16px;padding:3px 10px;border-radius:20px;background:#e2f7ed;color:#075b48;vertical-align:middle">v5.1 連續流程版</span></h1><p>修格蘭氏病｜診斷分類 · 腎臟表型 · 個別化治療 · 追蹤評估</p><p style="font-size:12px">臨床決策支援原型 v5.1 · Build 2026-11-21E · 2026-11 · 繁體中文 · 單機運算，不上傳患者資料</p></header><main class="wrap"><div class="notice"><b>醫療安全聲明：</b>此工具供醫療專業人員作臨床教學與決策輔助，非自動診斷或處方系統。對緊急低血鉀、AKI、快速進展 GN 等狀態，應優先依院內急救流程處置。計算結果須核對原始檢驗、病史及專科判斷。建議不等於台灣健保給付或 TFDA 核准。</div><div class="card" style="margin:0 0 10px;background:#ecf7f6;border-color:#a8d3cf"><b>進階臨床決策 v2.0 已上線：</b> <a href="advanced.html" style="font-weight:700">開啟 ESSDAI 領域盤點、腎切片決策、治療安全檢核、複雜病例與 20 題測驗 →</a></div><section id="careFlow" aria-label="連續臨床診療決策流程"><div class="flowHead"><h2 style="color:white;margin:0">Sjögren 臨床診療導航 v5.1</h2><p style="margin:7px 0">同一個病例、同一份資料、六個連續步驟。先核對病人資料，再完成診斷、治療、給付與追蹤。</p><strong id="flowProgress" aria-live="polite">第 1／6 步 · 病人資料</strong></div><div id="flowSteps" aria-label="診療進度"><button data-flow-step="0" type="button">① 病人資料</button><button data-flow-step="1" type="button">② 診斷鑑別</button><button data-flow-step="2" type="button">③ 診斷證據</button><button data-flow-step="3" type="button">④ 治療藥物</button><button data-flow-step="4" type="button">⑤ 健保審核</button><button data-flow-step="5" type="button">⑥ 追蹤療效</button></div><div id="flowPane0" class="flowPane"></div><div id="flowPane1" class="flowPane"></div><div id="flowPane2" class="flowPane"></div><div id="flowPane3" class="flowPane"></div><div id="flowPane4" class="flowPane"></div><div id="flowPane5" class="flowPane"></div><div class="flowFoot"><button type="button" id="flowBack" class="btn secondary">上一步</button><button type="button" id="flowNext" class="btn">下一步：診斷分析</button></div></section><nav class="tabs" aria-label="主功能"><button class="tab active" data-tab="entry">① 病人輸入</button><button class="tab" data-tab="analysis">② 診斷分析</button><button class="tab" data-tab="response">治療反應 v3.6</button><button class="tab" data-tab="treatment">③ 治療與追蹤</button><button class="tab" data-tab="drugNhi">藥物與台灣健保 v4.2</button><button class="tab" data-tab="cases">④ 示範病例</button><button class="tab" data-tab="evidence">⑤ 文獻依據</button><button class="tab" id="openTrend" type="button" data-tab="trendView">⑥ 腎臟趨勢圖</button><button class="tab" data-tab="integrated">⑦ ESSDAI／進階決策 v4.2</button></nav>
+
+/* v5.2 clinical diagnosis-and-treatment mind map */
+#clinicalMindMap{scroll-margin-top:12px}#clinicalMindMap .mmChoose{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}#clinicalMindMap .mmChoose button{border:1px solid #2c7796;border-radius:9px;background:#fff;color:#1d5672;min-height:44px;padding:9px 12px;font-weight:700;cursor:pointer}#clinicalMindMap .mmChoose button.mmChosen{background:#164967;color:#fff}
+#clinicalMindMap .mmTree{border-left:3px solid #89b8c7;padding-left:12px;margin:14px 0}
+#clinicalMindMap .mmTree details{border:1px solid #d3e2eb;border-radius:10px;padding:8px 10px;background:#fff;margin:8px 0}
+#clinicalMindMap .mmTree details details{border-left:3px solid #99c2d0;background:#f7fbfd;margin-left:10px}
+#clinicalMindMap .mmTree summary{cursor:pointer;list-style:none;font-weight:700;padding:5px;display:flex;align-items:center;gap:8px}
+#clinicalMindMap .mmTree summary::before{content:'▸';color:#137078;font-size:17px;flex:none}
+#clinicalMindMap .mmTree details[open]>summary::before{content:'▾'}
+#clinicalMindMap .mmTree p{font-size:14px;margin:8px 0 6px}
+#clinicalMindMap .mmJump{display:inline-block;border:1px solid #b0cedf;border-radius:8px;background:#eaf3f9;color:#165d84;font-weight:650;padding:8px 10px;cursor:pointer;min-height:40px;margin:5px 6px 2px 0}
+#clinicalMindMap .mmTag{border-radius:22px;background:#eaf5ee;color:#176449;padding:3px 8px;font-size:11px;white-space:nowrap}
+#clinicalMindMap .mmWarn{background:#fff5e7;border-left:3px solid #d99436;padding:8px;border-radius:6px}
+@media print{#clinicalMindMap details{break-inside:avoid}#clinicalMindMap .mmChoose,#clinicalMindMap .mmJump{display:none}}
+</style></head><body><header><h1>Sjögren Clinical Navigator <span style="display:inline-block;font-size:16px;padding:3px 10px;border-radius:20px;background:#e2f7ed;color:#075b48;vertical-align:middle">v5.2 連續流程版</span></h1><p>修格蘭氏病｜診斷分類 · 腎臟表型 · 個別化治療 · 追蹤評估</p><p style="font-size:12px">臨床決策支援原型 v5.2 · Build 2026-11-21E · 2026-11 · 繁體中文 · 單機運算，不上傳患者資料</p></header><main class="wrap"><div class="notice"><b>醫療安全聲明：</b>此工具供醫療專業人員作臨床教學與決策輔助，非自動診斷或處方系統。對緊急低血鉀、AKI、快速進展 GN 等狀態，應優先依院內急救流程處置。計算結果須核對原始檢驗、病史及專科判斷。建議不等於台灣健保給付或 TFDA 核准。</div><div class="card" style="margin:0 0 10px;background:#ecf7f6;border-color:#a8d3cf"><b>進階臨床決策 v2.0 已上線：</b> <a href="advanced.html" style="font-weight:700">開啟 ESSDAI 領域盤點、腎切片決策、治療安全檢核、複雜病例與 20 題測驗 →</a></div><section id="careFlow" aria-label="連續臨床診療決策流程"><div class="flowHead"><h2 style="color:white;margin:0">Sjögren 臨床診療導航 v5.2</h2><p style="margin:7px 0">同一個病例、同一份資料、六個連續步驟。先核對病人資料，再完成診斷、治療、給付與追蹤。</p><strong id="flowProgress" aria-live="polite">第 1／6 步 · 病人資料</strong></div><div id="flowSteps" aria-label="診療進度"><button data-flow-step="0" type="button">① 病人資料</button><button data-flow-step="1" type="button">② 診斷鑑別</button><button data-flow-step="2" type="button">③ 診斷證據</button><button data-flow-step="3" type="button">④ 治療藥物</button><button data-flow-step="4" type="button">⑤ 健保審核</button><button data-flow-step="5" type="button">⑥ 追蹤療效</button></div><div id="flowPane0" class="flowPane"></div><div id="flowPane1" class="flowPane"><div class="card" id="clinicalMindMap"><h2>診斷及治療心智圖 · v5.2</h2><p class="hint">沿著「臨床懷疑 → 分類與鑑別 → 腎臟表型 → 器官活動度 → 治療與健保 → 追蹤」展開節點。這是互動式知識樹，可點選節點與跳轉流程；選擇節點不等同病人已確診。</p><div class="mmChoose"><button type="button" data-mm-mode="diagnosis" class="mmChosen">診斷心智圖</button><button type="button" data-mm-mode="treatment">治療心智圖</button><button type="button" data-mm-mode="both">診斷＋治療全圖</button></div><div class="toolbar"><button type="button" id="mmExpand" class="btn secondary">全部展開</button><button type="button" id="mmCollapse" class="btn secondary">全部收合</button><button type="button" id="mmCopy" class="btn secondary">複製文字綱要</button></div><div id="mmTreeRoot" class="mmTree" aria-live="polite"></div><div class="result warn"><b>醫療安全：</b>診斷分類不等於臨床確診；腎臟 SjD 可能同時存在 dRTA、TIN、GN。嚴重低血鉀、AKI、快速進展 GN／系統性血管炎需優先處置。免疫治療必須依器官活動性、病理、感染及 HBV 風險審核，健保給付須逐項人工核對。</div></div></div><div id="flowPane2" class="flowPane"></div><div id="flowPane3" class="flowPane"></div><div id="flowPane4" class="flowPane"></div><div id="flowPane5" class="flowPane"></div><div class="flowFoot"><button type="button" id="flowBack" class="btn secondary">上一步</button><button type="button" id="flowNext" class="btn">下一步：診斷分析</button></div></section><nav class="tabs" aria-label="主功能"><button class="tab active" data-tab="entry">① 病人輸入</button><button class="tab" data-tab="analysis">② 診斷分析</button><button class="tab" data-tab="response">治療反應 v3.6</button><button class="tab" data-tab="treatment">③ 治療與追蹤</button><button class="tab" data-tab="drugNhi">藥物與台灣健保 v4.2</button><button class="tab" data-tab="cases">④ 示範病例</button><button class="tab" data-tab="evidence">⑤ 文獻依據</button><button class="tab" id="openTrend" type="button" data-tab="trendView">⑥ 腎臟趨勢圖</button><button class="tab" data-tab="integrated">⑦ ESSDAI／進階決策 v4.2</button></nav>
 <section id="entry" class="view active"><div id="caseLoadedStatus" role="status" aria-live="polite" class="notice" style="margin-bottom:12px">可從「④ 示範病例」載入教學案例，並先檢查病人資料。</div><div class="card" style="background:#f7fafc;border-color:#b7d0dd"><h2>病人資料核對與診斷準備</h2><p class="hint">載入病例後，先在本頁核對數值與單位。未完成項目會提示，但不自動當作陰性，也不強制填入不必要檢查。</p><div id="dataAudit" aria-live="polite" class="result"></div><div class="card" style="margin:12px 0;background:#f7fafc"><h3>依臨床表型選擇優先檢驗 v3.5</h3><p class="hint">切換表型後顯示優先檢查與尚未填入資料；這是工作清單，並非要求每位患者做全部檢查。</p><div class="field"><label for="targetPhenotype">目前主要疑似表型</label><select id="targetPhenotype"><option value="auto">自動提示（依已輸入資料）</option><option value="rta">疑似 distal RTA／低血鉀</option><option value="tin">疑似 Tubulointerstitial nephritis</option><option value="gn">疑似 Glomerulonephritis／cryoglobulinemia</option><option value="sicca">乾燥症狀／尚無明顯腎病</option></select></div><div id="phenotypeChecklist" class="result" aria-live="polite"></div></div><div class="toolbar"><button class="btn secondary" type="button" id="auditAgain">重新檢查缺項</button><button class="btn" type="button" id="auditProceed">完成核對，進入診斷分析 →</button></div></div><div class="grid"><div class="card"><h2>基本情況與症狀</h2><div class="fields"><div class="field"><label for="age">年齡</label><input id="age" type="number" min="0" max="120" placeholder="歲"></div><div class="field"><label for="sex">性別</label><select id="sex"><option value="">未填</option><option>女性</option><option>男性</option><option>其他／未指定</option></select></div><div class="field"><label for="dryEyes">眼乾（持續性）</label><select id="dryEyes" data-tri><option value="">未評估</option><option value="yes">有</option><option value="no">無</option></select></div><div class="field"><label for="dryMouth">口乾（持續性）</label><select id="dryMouth" data-tri><option value="">未評估</option><option value="yes">有</option><option value="no">無</option></select></div><div class="field"><label for="weakness">嚴重肌無力／癱瘓</label><select id="weakness" data-tri><option value="">未評估</option><option value="yes">有</option><option value="no">無</option></select></div><div class="field"><label for="systemic">疑似 SjD 系統性表現</label><select id="systemic" data-tri><option value="">未評估</option><option value="yes">有</option><option value="no">無</option></select><small>是否有符合 ESSDAI 域的全身性徵象，須由臨床確認</small></div><div class="field wide"><label for="notes">臨床摘要（不建議輸入身分資訊）</label><textarea id="notes" rows="2" placeholder="例如：反覆低血鉀、腎結石、血尿、紫斑…"></textarea></div></div></div><div class="card"><h2>ACR/EULAR 2016 客觀分類項目</h2><div class="fields"><div class="field"><label for="ssa">Anti-SSA/Ro</label><select id="ssa"><option value="">未做／未知</option><option value="yes">陽性</option><option value="no">陰性</option></select></div><div class="field"><label for="lip">唇部小唾液腺 Focus score</label><select id="lip"><option value="">未做／未知</option><option value="yes">≥1 focus/4 mm²</option><option value="no">未達門檻</option></select></div><div class="field"><label for="oss">眼表染色</label><select id="oss"><option value="">未做／未知</option><option value="yes">OSS ≥5 或 van Bijsterveld ≥4</option><option value="no">未達門檻</option></select></div><div class="field"><label for="schirmer">Schirmer test</label><select id="schirmer"><option value="">未做／未知</option><option value="yes">≤5 mm/5 min</option><option value="no">>5 mm/5 min</option></select></div><div class="field wide"><label for="saliva">Unstimulated salivary flow</label><select id="saliva"><option value="">未做／未知</option><option value="yes">≤0.1 mL/min</option><option value="no">>0.1 mL/min</option></select></div><div class="field wide"><label for="exclusion">分類標準排除條件</label><select id="exclusion"><option value="">尚未確認</option><option value="no">已排除所有指定條件</option><option value="yes">存在至少一項排除條件</option></select><small>頭頸放療、活動性 HCV、AIDS、sarcoidosis、amyloidosis、GVHD、IgG4-related disease</small></div></div></div></div>
 <div class="grid"><div class="card"><h2>血液、腎功能與酸鹼數據</h2><div class="fields"><div class="field"><label for="na">Na (mmol/L)</label><input id="na" type="number" step="any" placeholder="140"></div><div class="field"><label for="cl">Cl (mmol/L)</label><input id="cl" type="number" step="any" placeholder="113"></div><div class="field"><label for="hco3">HCO₃⁻ (mmol/L)</label><input id="hco3" type="number" step="any" placeholder="15"></div><div class="field"><label for="k">K (mmol/L)</label><input id="k" type="number" step="any" placeholder="2.5"></div><div class="field"><label for="ph">血液 pH</label><input id="ph" type="number" step="0.01" placeholder="7.28"></div><div class="field"><label for="albumin">Albumin (g/dL)</label><input id="albumin" type="number" step="0.1" placeholder="4.0"></div><div class="field"><label for="creat">Creatinine (mg/dL)</label><input id="creat" type="number" step="any" placeholder="1.1"></div><div class="field"><label for="egfr">eGFR (mL/min/1.73m²)</label><input id="egfr" type="number" step="any" placeholder="72"></div><div class="field"><label for="priorEgfr">先前 eGFR</label><input id="priorEgfr" type="number" step="any" placeholder="90"></div><div class="field"><label for="mg">Mg (mg/dL)</label><input id="mg" type="number" step="any" placeholder="1.9"></div><div class="field"><label for="upcr">UPCR (mg/g)</label><input id="upcr" type="number" step="any" placeholder="200"></div><div class="field"><label for="urineRbc">尿沉渣／RBC casts</label><select id="urineRbc"><option value="">未做／未知</option><option value="yes">有明顯腎絲球性血尿／RBC casts</option><option value="no">無明顯活躍沉渣</option></select></div></div></div>
 <div class="card"><h2>尿液與免疫學資料</h2><div class="fields"><div class="field"><label for="urinePh">尿液 pH</label><input id="urinePh" type="number" step="0.1" placeholder="6.5"></div><div class="field"><label for="urineNa">尿 Na (mmol/L)</label><input id="urineNa" type="number" step="any" placeholder="40"></div><div class="field"><label for="urineK">尿 K (mmol/L)</label><input id="urineK" type="number" step="any" placeholder="25"></div><div class="field"><label for="urineCl">尿 Cl (mmol/L)</label><input id="urineCl" type="number" step="any" placeholder="30"></div><div class="field"><label for="ana">ANA</label><select id="ana"><option value="">未做／未知</option><option value="yes">陽性</option><option value="no">陰性</option></select></div><div class="field"><label for="rf">RF</label><select id="rf"><option value="">未做／未知</option><option value="yes">陽性</option><option value="no">陰性</option></select></div><div class="field"><label for="c4">C4 (mg/dL)</label><input id="c4" type="number" step="any" placeholder="12"></div><div class="field"><label for="cryo">Cryoglobulin</label><select id="cryo"><option value="">未做／未知</option><option value="yes">陽性</option><option value="no">陰性</option></select></div><div class="field"><label for="biopsy">腎切片結果</label><select id="biopsy"><option value="">未做／未知</option><option value="tin">活動性 TIN</option><option value="fibrosis">以 IFTA／慢性化為主</option><option value="gn">Immune-complex / cryoglobulinemic GN</option><option value="other">其他病理</option></select></div><div class="field"><label for="redFlags">淋巴瘤紅旗</label><select id="redFlags"><option value="">未評估</option><option value="yes">腺體持續腫大／淋巴結／B symptoms</option><option value="no">目前無</option></select></div><div class="field"><label for="diarrhea">近期腹瀉／腸道鹼流失</label><select id="diarrhea"><option value="">未評估</option><option value="yes">可能</option><option value="no">無</option></select></div><div class="field"><label for="uti">尿路感染／尿 pH 干擾</label><select id="uti"><option value="">未評估</option><option value="yes">可能</option><option value="no">已排除</option></select></div></div><p class="hint">可填部分資料；未檢驗不會自動當作陰性。請先核對檢驗單位。</p></div></div><div class="toolbar"><button class="btn" id="calculate">確認資料並分析診斷與治療</button><button class="btn secondary" id="loadExample">載入 dRTA 示範資料</button><button class="btn danger" id="reset">清空全部資料</button></div></section>
@@ -626,6 +640,10 @@ registryRender();
  addTitle(place.certainty,'診斷確定度與器官病變證據');
  move('activity',place.certainty);move('biopsy',place.certainty);move('decision',place.certainty);
  move('treatment',place.therapy);
+ const mindLink=document.createElement('div');mindLink.className='card';mindLink.style.cssText='background:#edf7f5;border-color:#b4dbcd';
+ mindLink.innerHTML='<b>診斷與治療心智圖</b><p class="hint">治療步驟可隨時回顧完整分支及診斷證據。</p><button type="button" class="btn secondary" id="treatmentMindJump">開啟治療心智圖 →</button>';
+ place.therapy.insertBefore(mindLink,place.therapy.firstChild);
+ document.getElementById('treatmentMindJump').addEventListener('click',()=>{if(window.clinicalMindMapMode)window.clinicalMindMapMode('treatment');if(window.careFlowStep)window.careFlowStep(1);});
  addTitle(place.therapy,'依表型選擇藥物（同一份病人資料）');
  const rx=document.getElementById('drugNhi');
  if(rx){const cards=[...rx.children].filter(x=>x.classList.contains('card'));if(cards[0])place.therapy.appendChild(cards[0]);}
@@ -678,5 +696,92 @@ registryRender();
  const review=document.getElementById('rrToTrends');if(review)review.addEventListener('click',()=>enter(5));
  // Main safety: no data is copied or reset between steps; all modules reference the same live fields.
  enter(0);
+})();
+
+/* v5.2 accessible mobile clinical mindmap, no new patient data store */
+(function(){
+ const root=document.getElementById('clinicalMindMap');if(!root)return;
+ const leaf=(title,detail,step=null,tag='')=>({title,detail,step,tag});
+ const branches={
+ diagnosis:{
+ title:'Sjögren disease：診斷與腎臟病變',
+ children:[
+ {title:'一、臨床懷疑與安全優先',tag:'起點',children:[
+ leaf('眼乾／口乾症狀','乾眼、口乾、腮腺腫大與齲齒；先排除藥物、副作用及其他原因。',0),
+ leaf('腎臟或非乾燥首發','不明原因低血鉀、正常陰離子間隙酸中毒、腎鈣化、蛋白尿、血尿或腎功能惡化，可能先於乾燥症狀。',0),
+ leaf('急症優先','K 顯著偏低、無力／癱瘓、重度酸血症或進展性 GN：先 ECG、血氣、電解質、腎功能與急症評估。',1,'安全')
+ ]},
+ {title:'二、建立 SjD 分類與臨床診斷',tag:'2016 ACR/EULAR',children:[
+ leaf('Anti-SSA/Ro (+)＝3 分','僅一項加權客觀分類指標；Anti-SSB 單獨陽性不計分。',1),
+ leaf('唇腺切片 focus score ≥1/4 mm²＝3 分','對 SSA 陰性但高度懷疑者特別有用，須由合格病理確認。',2),
+ leaf('眼表染色／Schirmer／唾液流率各 1 分','OSS ≥5（或 van Bijsterveld ≥4）、Schirmer ≤5 mm/5 min、非刺激唾液流率 ≤0.1 mL/min。',1),
+ leaf('總分 ≥4 且符合適用條件與排除條件','分類標準不等於臨床確診；未檢驗不能視為陰性，並需排除 HCV、IgG4-RD、sarcoidosis 等相關情境。',2)
+ ]},
+ {title:'三、腎臟表型鑑別（可同時存在）',tag:'dRTA / TIN / GN',children:[
+ leaf('Distal RTA（第一型）','低 HCO₃⁻、NAGMA、低 K、酸中毒時尿 pH >5.5 提示排酸缺陷；排除腹瀉、UTI、藥物干擾，尿 NH₄⁺／UAG 須審慎解讀。',1),
+ leaf('活動性 TIN','急性／亞急性 eGFR 下降、腎小管損傷與電解質流失；評估藥物性 TIN、感染、Fanconi 徵象。',2),
+ leaf('GN／Cryoglobulinemia','血尿／RBC casts、UPCR 增加、低 C4、RF 或 cryoglobulin；鑑別 cryo-GN、SLE、其他免疫複合體 GN。',2),
+ leaf('慢性 IFTA／CKD','eGFR 慢性下降、病理纖維化與萎縮；區分不可逆損傷與可治療的活動性炎症。',2)
+ ]},
+ {title:'四、器官活動度與病理證據',tag:'ESSDAI / biopsy',children:[
+ leaf('ESSDAI 12 領域','逐域確認活動性與歸因後加權；未評估領域不能當作 0。評估 systemic activity 不可取代腎切片。',2),
+ leaf('腎切片時機','不明原因進展性 eGFR 下降、活躍尿沉渣、明顯蛋白尿或病理將改變免疫治療時優先討論。',2),
+ leaf('Inflammation / Dysfunction / Damage','活動性炎症、功能性腎小管異常、不可逆 IFTA 須分開紀錄。',2)
+ ]}
+ ]},
+ treatment:{
+ title:'Sjögren disease：依器官表型分層治療',
+ children:[
+ {title:'一、先確認有無器官威脅與急症',tag:'共同前置',children:[
+ leaf('重度低血鉀／酸血症','急症評估 ECG、呼吸肌、K、Mg、血氣；安全補鉀優先，矯正酸中毒時防止 K 進一步下降。',3),
+ leaf('快速進展 GN／重症血管炎','及時腎臟科與風濕免疫科聯合評估病理與器官威脅；不能等待所有分類檢驗完成才處理。',3)
+ ]},
+ {title:'二、病變表型選擇處置',tag:'藥物選擇',children:[
+ leaf('乾眼／口乾為主','人工淚液、眼科局部照護、口腔清潔及必要的促分泌治療；無器官炎症時不常規全身免疫抑制。',3),
+ leaf('關節／全身性症狀','Hydroxychloroquine 可由風濕科考慮限期試用，需評估視網膜毒性與用藥風險；不保證改善腎臟 RTA。',3),
+ leaf('Distal RTA','Potassium chloride／citrate 與 sodium bicarbonate 等支持性治療，視 K、腎功能、鈉負荷與結石風險選擇並調整。',3),
+ leaf('活動性 TIN','若具可逆活動性炎症且排除替代病因，專科可討論 glucocorticoid；MMF／AZA 等 steroid-sparing 證據有限。',3),
+ leaf('嚴重 Cryoglobulinemic GN／血管炎','病理及器官威脅決定方案；部分重症可由專科考慮 glucocorticoid 與 rituximab，極危重特定情況評估血漿置換。',3),
+ leaf('慢性 IFTA／CKD','以 CKD 風險與蛋白尿、血壓管理及腎小管功能支持為主；纖維化本身不是增加免疫抑制的理由。',3)
+ ]},
+ {title:'三、免疫治療前安全與健保確認',tag:'必要檢核',children:[
+ leaf('感染、HBV、HCV、結核等風險','RTX 尤需 HBsAg／anti-HBc 與再活化預防策略；MMF 須注意妊娠／胚胎毒性、CBC、感染及肝腎功能。',3),
+ leaf('台灣健保給付與仿單分開判讀','先看臨床適用，再依藥品代碼、申報診斷、給付限制、公告生效日、事前審查及續用條件逐條核實；SjD 用途不得自動推論核付。',4)
+ ]},
+ {title:'四、治療反應及長期追蹤',tag:'回饋',children:[
+ leaf('功能改善與活動度分別評估','eGFR slope、UPCR、尿沉渣、K、HCO₃⁻、每日補鉀量及 ESSDAI；改善不直接證明治療因果效果。',5),
+ leaf('疑似惡化／復發提示','新蛋白尿、eGFR 下降、低 K／酸中毒復現、ESSDAI 上升時需重新鑑別 AKI、感染與其他病因；不得自動判斷復發。',5),
+ leaf('調整治療與再次評估','依病程及不良反應重新評估器官活動性、病理慢性化與療效，記錄方案變更及安全監測。',5)
+ ]}
+ ]}
+ };
+ let mode='diagnosis';
+ const escText=x=>String(x).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+ function nodeHtml(node,depth){
+  const tag=node.tag?'<span class="mmTag">'+escText(node.tag)+'</span>':'';
+  const step=node.step!==null&&node.step!==undefined?'<button type="button" class="mmJump" data-mm-step="'+node.step+'">前往第 '+(node.step+1)+' 步</button>':'';
+  if(node.children){
+   return '<details '+(depth===0?'open':'')+'><summary>'+escText(node.title)+tag+'</summary><div>'+node.children.map(x=>nodeHtml(x,depth+1)).join('')+'</div></details>';
+  }
+  return '<details><summary>'+escText(node.title)+'</summary><p>'+escText(node.detail)+'</p>'+step+'</details>';
+ }
+ function render(){
+  const all=mode==='both'?[branches.diagnosis,branches.treatment]:[branches[mode]];
+  document.getElementById('mmTreeRoot').innerHTML=all.map(x=>nodeHtml(x,0)).join('');
+  root.querySelectorAll('[data-mm-step]').forEach(b=>b.addEventListener('click',()=>{const n=Number(b.dataset.mmStep);if(typeof window.careFlowStep==='function')window.careFlowStep(n)}));
+  root.querySelectorAll('[data-mm-mode]').forEach(b=>{b.classList.toggle('mmChosen',b.dataset.mmMode===mode)});
+ }
+ root.querySelectorAll('[data-mm-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mmMode;render()}));
+ document.getElementById('mmExpand').addEventListener('click',()=>root.querySelectorAll('.mmTree details').forEach(x=>x.open=true));
+ document.getElementById('mmCollapse').addEventListener('click',()=>root.querySelectorAll('.mmTree details').forEach((x,i)=>x.open=i===0));
+ const plain=(node,depth=0)=>'  '.repeat(depth)+'- '+node.title+(node.detail?'：'+node.detail:'')+'\n'+(node.children||[]).map(x=>plain(x,depth+1)).join('');
+ document.getElementById('mmCopy').addEventListener('click',()=>{
+  const selected=mode==='both'?[branches.diagnosis,branches.treatment]:[branches[mode]];
+  const t=selected.map(x=>plain(x)).join('\n');
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(()=>{const b=new Blob([t],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='Sjogren_mindmap_v52.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)})}
+  else{const b=new Blob([t],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='Sjogren_mindmap_v52.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)}
+ });
+ render();
+ window.clinicalMindMapMode=x=>{if(['diagnosis','treatment','both'].includes(x)){mode=x;render()}};
 })();
 </script></body></html>
