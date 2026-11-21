@@ -396,7 +396,7 @@ function eventRender(){
 document.getElementById('eventDate').value=todayLocal();
 document.getElementById('eventAdd').addEventListener('click',()=>{
  const date=document.getElementById('eventDate').value,ess=eventSafeNum('eventEssdai');
- if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(date)){document.getElementById('eventStatus').textContent='請填寫有效日期。';return;}
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){document.getElementById('eventStatus').textContent='請填寫有效日期。';return;}
  if(ess!==null&&(!Number.isInteger(ess)||ess<0||ess>123)){document.getElementById('eventStatus').textContent='ESSDAI 必須為 0–123 的整數，或留空。';return;}
  clinicalEvents.push({date,kind:document.getElementById('eventKind').value,therapy:document.getElementById('eventTherapy').value,essdai:ess});
  document.getElementById('eventStatus').textContent='已新增事件；紀錄只保留於目前網頁記憶體。';eventRender();
@@ -421,7 +421,7 @@ document.getElementById('eventDemo').addEventListener('click',()=>{
 });
 function eventPlainReport(){
  const rows=['Sjögren Clinical Navigator — 匿名追蹤摘要 v3.9','產生日期：'+todayLocal(),'僅供臨床審核，不代表復發診斷或治療成效確認。','','檢驗紀錄 date,eGFR,K,HCO3,UPCR',...[...visitData].sort((a,b)=>a.date.localeCompare(b.date)).map(p=>[p.date,p.egfr??'',p.k??'',p.hco3??'',p.upcr??''].join(',')),'','治療事件 date,type,therapy,ESSDAI',...[...clinicalEvents].sort((a,b)=>a.date.localeCompare(b.date)).map(e=>[e.date,eventTextKind[e.kind]||e.kind,e.therapy,e.essdai??''].join(',')),'','待重新評估的訊號',...eventSignal().findings,'','備註：無法證明診斷或因果治療反應；所有輸入需核對。'];
- return rows.join('\\n');
+ return rows.join('\n');
 }
 document.getElementById('eventExport').addEventListener('click',()=>{
  if(!visitData.length&&!clinicalEvents.length){document.getElementById('eventStatus').textContent='尚無紀錄可匯出。';return;}
