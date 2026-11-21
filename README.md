@@ -20,3 +20,18 @@
 - ACR/EULAR 2016: https://pmc.ncbi.nlm.nih.gov/articles/PMC5650478/
 - BSR 2024/2025: https://pmc.ncbi.nlm.nih.gov/articles/PMC12013823/
 - EULAR 2019/2020: https://ard.bmj.com/content/79/1/3
+
+## v3.0 integrated page
+The main entry point is `index.html`. The sixth main tab now contains:
+- ESSDAI 12-domain weighted scoring (0–123) with domain-specific permissible activity levels. Unassessed domains never silently count as zero; severity selections require clinician confirmation against the official domain definitions.
+- Renal biopsy consideration and immunosuppression pre-treatment checklist.
+- Session-only longitudinal charts for eGFR, potassium, bicarbonate, and UPCR, with anonymous CSV export. Entries are not saved after page refresh.
+- Integrated clinical differential and supportive-treatment considerations based on the existing main form.
+- Four complex educational cases and 20 questions.
+
+The earlier `advanced.html` remains accessible as a legacy link; all functions are integrated into the main page.
+
+### Clinical boundaries
+This is an educational decision-support prototype, not validated medical software or a prescribing device. It does not connect to hospital systems, persist patient records, confirm disease attribution, independently establish ESSDAI domain activity, or provide immunosuppression orders. Users must verify laboratory values, clinical exclusions, and institutional protocols.
+
+ESSDAI original user guide: https://pmc.ncbi.nlm.nih.gov/articles/PMC4613159/
