@@ -1,0 +1,183 @@
+{
+  "version": "2026-11-21",
+  "status": "manual-review-only",
+  "scope": "Taiwan NHI drug reimbursement rules and medication lookup references, not an automated eligibility decision",
+  "sources": [
+    {
+      "id": "nhi-products",
+      "title": "健保用藥品項網路查詢",
+      "url": "https://info.nhi.gov.tw/INAE3000",
+      "date": "dynamic",
+      "type": "product_lookup"
+    },
+    {
+      "id": "nhi-chapters",
+      "title": "最新版藥品給付規定內容（分章節）",
+      "url": "https://www.nhi.gov.tw/ch/cp-7593-ad2a9-3397-1.html",
+      "date": "2026-10-22",
+      "type": "chapter_index"
+    },
+    {
+      "id": "nhi-full",
+      "title": "最新版藥品給付規定內容（整份）",
+      "url": "https://www.nhi.gov.tw/ch/cp-13108-67ddf-2508-1.html",
+      "date": "2026-10-22",
+      "type": "full_rules"
+    },
+    {
+      "id": "nhi-amendments",
+      "title": "藥品給付規定與公告",
+      "url": "https://www.nhi.gov.tw/ch/np-2505-1.html",
+      "date": "dynamic",
+      "type": "announcements"
+    },
+    {
+      "id": "ritux-9-20",
+      "title": "Rituximab 第9.20節抗癌瘤給付修訂公告",
+      "url": "https://www.nhi.gov.tw/ch/cp-19911-d976c-3258-1.html",
+      "date": "2026-05-15",
+      "type": "limited_amendment"
+    },
+    {
+      "id": "immuno-update",
+      "title": "第8節免疫製劑修訂公告（多疾病）",
+      "url": "https://www.nhi.gov.tw/ch/cp-20687-74a57-3258-1.html",
+      "date": "2026-10-30",
+      "type": "limited_amendment"
+    }
+  ],
+  "entries": [
+    {
+      "id": "tears",
+      "name": "人工淚液／潤滑劑",
+      "chapter": "依品項確認",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "OTC與健保品項需分別核對；不自動認定 SjD 給付"
+    },
+    {
+      "id": "mouth",
+      "name": "唾液替代／促分泌用藥",
+      "chapter": "依品項確認",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "須查有效成分、劑型及正式適應症"
+    },
+    {
+      "id": "hcq",
+      "name": "Hydroxychloroquine",
+      "chapter": "依品項確認",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "SjD 用途是否申報符合規範尚未逐條核實"
+    },
+    {
+      "id": "potassium",
+      "name": "Potassium chloride／citrate",
+      "chapter": "依品項確認",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "依不同成分、口服及注射劑型逐一核對"
+    },
+    {
+      "id": "alkali",
+      "name": "Sodium bicarbonate",
+      "chapter": "依品項確認",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "不得推論所有製劑或 SjD 特定用途皆可申報"
+    },
+    {
+      "id": "steroid",
+      "name": "Glucocorticoid",
+      "chapter": "依品項確認",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "須確認藥物、劑型與實際處方適應症"
+    },
+    {
+      "id": "mmf",
+      "name": "Mycophenolate mofetil／MPA",
+      "chapter": "依品項及給付條文確認",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "不得將移植或其他疾病給付外推至 SjD-TIN"
+    },
+    {
+      "id": "aza",
+      "name": "Azathioprine",
+      "chapter": "依品項確認",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "SjD 專屬適應症需人工核實"
+    },
+    {
+      "id": "rtx",
+      "name": "Rituximab",
+      "chapter": "第8節免疫製劑／第9.20節抗癌瘤（依適應症）",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters",
+        "ritux-9-20",
+        "immuno-update"
+      ],
+      "caution": "第9.20節公告為抗癌瘤用途，不支持 SjD 或 cryoglobulinemic GN 自動給付；其他疾病條款亦不可外推"
+    },
+    {
+      "id": "ckdsupport",
+      "name": "CKD 支持性治療",
+      "chapter": "依個別藥物與共病",
+      "indicationStatus": "unverified",
+      "priorStatus": "unverified",
+      "renewalStatus": "unverified",
+      "sourceIds": [
+        "nhi-products",
+        "nhi-chapters"
+      ],
+      "caution": "不同成分與共病申報限制須分別審核"
+    }
+  ]
+}
